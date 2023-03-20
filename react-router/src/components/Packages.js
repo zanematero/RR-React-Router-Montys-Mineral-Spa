@@ -1,16 +1,20 @@
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import Container from 'react-bootstrap/esm/Container'
+
 export default function Packages(props){
-    const displayPackages = props.packages.map((eachPackage) => <li>{eachPackage}</li>)
+    const displayPackages = props.packages.map((eachPackage) => <ListGroup.Item>{eachPackage}</ListGroup.Item>)
 
     return (
-        <div>
-            <div className="packages">
-                <div className="packagesHeader">
-                    <h1>Our Packages</h1>
-                </div>
-                <ul>
+        <Container>
+            <Card style={{marginTop:'1rem'}}>
+                <Card.Title as="h1">
+                    Our Packages
+                </Card.Title>
+                <ListGroup variant='flush'>
                     {displayPackages}
-                </ul>
-            </div>
-        </div>
+                </ListGroup>
+            </Card>
+        </Container>
     )
 }

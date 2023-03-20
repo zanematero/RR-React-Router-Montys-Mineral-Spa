@@ -4,6 +4,7 @@ import './App.css';
 import Home from './components/Home'
 import About from './components/About'
 import Packages from './components/Packages'
+import Navbar from './components/Nav'
 
 
 function App() {
@@ -13,25 +14,11 @@ function App() {
   return (
       <div className="App">
         <Router>
-            <header>
-                <div className="navBar">
-                    <ul>
-                      <li>
-                      <Link to="/">Home</Link>
-                      </li>
-                      <li>
-                      <Link to="/about">About Us</Link>
-                      </li>
-                      <li>
-                      <Link to="/packages">Our Packages</Link>
-                      </li>
-                    </ul>
-                </div>
-            </header>
+            <Navbar />
         
         <div className="display">
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/packages" element={<Packages packages={packages}/>} />
             </Routes>
